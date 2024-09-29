@@ -7,12 +7,14 @@ export default function PrivateRoute() {
     <>
         {
           auth?.user?(
+            <><Header/> 
           <main className="mx-auto mx-w-[1020px] py-8">
              <div className="container">
-                <Header/> 
                 <Outlet/>
              </div>
-          </main>)
+          </main>
+          </>
+          )
           :(<Navigate to='/login'/>)
         }
     </>
