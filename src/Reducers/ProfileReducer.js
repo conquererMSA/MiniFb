@@ -27,7 +27,14 @@ const profileReducer=(state, action)=>{
                         ...state,
                         error:action.error,
                     }
-    
+        case actions.profile.IMAGE_UPDATED:
+                    return {
+                        ...state,
+                        user:{
+                            ...state.user,
+                            avatar:action.data.avatar
+                        }
+                    }
         default:
             return state;
     }
